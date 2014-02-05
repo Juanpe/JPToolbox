@@ -1,16 +1,17 @@
 JPToolbox
 =========
 
-## Categories
+Cocoa Categories and wrapper classes
+
+I'll update frequently
+
+
+### Categories
 
 - UIPanGestureRecognizer+JPExtensions
 - UIView+JPExtensions 
 
-## Wrapper classes
+### Wrapper classes
 
 - JPHorizontalGestureRecognizer
 - JPVerticalPanGestureRecognizer 
-
-
-I'll update frequently
-
