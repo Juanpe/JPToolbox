@@ -1,6 +1,5 @@
 //
 //  UIPanGestureRecognizer+JPExtensions.m
-//  JPDynamicView
 //
 //  Created by Juan Pedro Catalán on 05/02/14.
 //  Copyright (c) 2014 Juanpe Catalán. All rights reserved.
@@ -12,29 +11,16 @@
 
 - (JPPanGestureDirection) direction
 {
-    CGPoint velocity = [self velocityInView:self.view.window];
+    UIView *panningView = [self view];
+    CGPoint translation = [self translationInView:[panningView superview]];
     
-    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-    
-    if (self.way == JPPanGestureWayVertical) {
-        if (velocity.y > 0) {
-            
-            return (UIInterfaceOrientationIsLandscape(orientation)) ? JPPanGestureDirectionUp : JPPanGestureDirectionDown;
-            
-        }else {
-            
-            return (UIInterfaceOrientationIsLandscape(orientation)) ? JPPanGestureDirectionDown : JPPanGestureDirectionUp;
-        }
-    }
-    else {
-        if (velocity.x > 0) {
-            
-            return (UIInterfaceOrientationIsLandscape(orientation)) ? JPPanGestureDirectionLeft : JPPanGestureDirectionRight;
-            
-        }else {
-            
-            return (UIInterfaceOrientationIsLandscape(orientation)) ? JPPanGestureDirectionRight : JPPanGestureDirectionLeft;
-        }
+    if (self.way == JPPanGestureWayHorizontal) {
+        
+        return (translation.x > 0.0f) ? JPPanGestureDirectionRight: JPPanGestureDirectionLeft;
+        
+    }else{
+        
+        return (translation.y > 0.0f) ? JPPanGestureDirectionDown : JPPanGestureDirectionUp;
     }
 }
 
