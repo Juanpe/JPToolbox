@@ -1,8 +1,16 @@
 JPToolbox
 =========
 
-Categories and wrapper classes
+## Categories
 
-TO-DO:
+- UIPanGestureRecognizer+JPExtensions
+- UIView+JPExtensions 
+
+## Wrapper classes
+
+- JPHorizontalGestureRecognizer
+- JPVerticalPanGestureRecognizer 
+
+
 I'll update frequently
 
